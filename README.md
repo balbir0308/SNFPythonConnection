@@ -1,5 +1,8 @@
 # SNFPythonConnection
-Python class to connect to snowflake using Basic, SSO or RSA authentication mechanism.
+We have frequently seen developers struggle to establish a connection to Snowflake in a first go using Snowflake Python Connector. This project uses Snowflake Python connector to establish a connection to Snowflake using Basic, SSO or RSA authentication mechanism.
+
+
+The core logic to establish a connection to Snowflake is present in the class `SNFConnectionManager.py`
 
 ## Configuration File
 
