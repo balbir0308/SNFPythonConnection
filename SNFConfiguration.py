@@ -27,10 +27,20 @@ class SNFConfiguration:
             return None
 
     def getSNFWarehouse(self, env):
-        return self.__config[env]["snowflake_warehouse"]
+        warehouse = None
+        try:
+            warehouse = self.__config[env]["snowflake_warehouse"]
+        except KeyError:
+            warehouse = ""
+        return warehouse
 
     def getSNFRole(self, env):
-        return self.__config[env]["snowflake_role"]
+        role = None
+        try:
+            role = self.__config[env]["snowflake_role"]
+        except KeyError:
+            role = ""
+        return role
 
     def getSNFConnectionType(self, env):
         return self.__config[env]["snowflake_connection_type"]

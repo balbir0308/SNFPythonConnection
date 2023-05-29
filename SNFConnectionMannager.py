@@ -77,7 +77,7 @@ class SNFConnectionManager:
                     role = self.__roleName,
                     warehouse = self.__warehouse
                 )
-                self.logger.info("Connection opened to Snowflake account: %s" %self.__account)
+            self.logger.info("Connection opened to Snowflake account: %s" %self.__account)
         except Exception:
             raise
 
