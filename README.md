@@ -1,2 +1,33 @@
 # SNFPythonConnection
-Factory Class to establish a connection to Snowflake using Basic or SSO or RSA authentication.
+Python class to connect to snowflake using Basic, SSO or RSA authentication mechanism.
+
+## Configuration File
+
+Code maintains a configuration file which defines Snowflake Connection attributes.
+
+| File | Note  |
+|--|--|
+|./resources/config.ini  |Snowflake Connection configuration is defined in this file. We can have more than one environment defined in this file as Group.  |
+
+### config.ini
+| Attribute | Required | Note|
+|--|--|--|
+|  snowflake_account| * | Snowflake Account Name |
+|  snowflake_user_name| * | Snowflake User Name |
+|  snowflake_role| * | Snowflake Role which has permissions to Create Network Policy and Describe Network Policy, Describe needs an active Warehouse. |
+|  snowflake_warehouse| * | Snowflake Warehouse |
+|  snowflake_connection_type| * | KEY / SSO /BASIC |
+|  snowflake_private_key_path_env_var| * | Environment variable defining path to Private Key. |
+|  snowflake_connection_secret_env_var| * | Environment variable defining password for Basic connection or connection using Private Key Passphrase. |
+
+## Code Setup
+
+Prerequisites:  `python, pip, virtualenv`
+
+    $ pip install virtualenv 
+    $ virtualenv penv 
+    $ source penv/bin/activate 
+    $ pip install -r requirements.txt
+
+### Execute Command
+    python main.py
